@@ -1,5 +1,5 @@
 import { View, Text, TouchableOpacity, Image } from 'react-native'
-import React from 'react'
+import React, { useState } from 'react'
 import { StarIcon, MapPinIcon } from 'react-native-heroicons/outline'
 
 const RestaurantCard = (props) => {
@@ -15,8 +15,9 @@ const RestaurantCard = (props) => {
     long,
     lat,
   } = props
+
   return (
-    <TouchableOpacity>
+    <TouchableOpacity className="bg-white mr-3 shadow">
       <Image source={{ uri: imgUrl }} className="h-36 w-64 rounded-sm" />
       <View className="pb-4">
         <Text className="font-bold text-lg pt-2">{title}</Text>
@@ -26,9 +27,9 @@ const RestaurantCard = (props) => {
             <Text className="text-green-500"> {rating}</Text> · {genre}
           </Text>
         </View>
-        <View className="flex-row">
+        <View className="flex-row items-center space-x-2">
           <MapPinIcon color="gray" opacity={0.4} size={22} />
-          <Text>Nearby · {address}</Text>
+          <Text className="text-gray-500 text-xs">Nearby · {address}</Text>
         </View>
       </View>
     </TouchableOpacity>
