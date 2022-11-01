@@ -4,11 +4,12 @@ import { useNavigation, useRoute } from '@react-navigation/native'
 import yelp from '../apis/yelp'
 import {
   ArrowLeftIcon,
-  StarIcon,
   MapPinIcon,
   QuestionMarkCircleIcon,
   ChevronRightIcon,
 } from 'react-native-heroicons/outline'
+
+import { StarIcon } from 'react-native-heroicons/solid'
 import DishRow from '../components/DishRow'
 
 const RestaurantScreen = () => {
@@ -75,7 +76,7 @@ const RestaurantScreen = () => {
             <View className="flex-row items-center space-x-1">
               <StarIcon color="green" opacity={0.5} size={22} />
               <Text className="text-xs text-gray-500 ">
-                <Text className="text-green-500">{result.data?.rating}</Text> ·
+                <Text style={{ color: 'green' }}>{result.data?.rating}</Text> ·
                 {result.data?.categories[0].title}
               </Text>
             </View>
